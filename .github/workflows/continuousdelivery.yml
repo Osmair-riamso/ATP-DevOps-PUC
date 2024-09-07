@@ -2,7 +2,7 @@ name: Continuous Delivery
 on:
     push:
         branches:
-            - main #ou qualquer outra branch
+            - main  # ou qualquer outra branch
 jobs:
     deliver:
         runs-on: ubuntu-latest
@@ -13,10 +13,10 @@ jobs:
             - name: Simulando Continuos Delivery
               uses: actions/upload-artifact@v4
               with:
-                name: projetozipado.zip
-                path:
-                    '**.py'
-                    README.md
+                  name: projetozipado.zip
+                  path: 
+                    - '**/*.py'  # Corrigido: colocar o caminho corretamente no array
+                    - README.md
 
 deploy:
     runs-on: ubuntu-latest
