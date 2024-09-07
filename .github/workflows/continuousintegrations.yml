@@ -5,7 +5,10 @@ on:
             - main
 jobs:
     build:
+ Criacao-ci
         runs-on: ubuntu-latest  # Correção: mudar "run-on" para "runs-on"
+
+main
         steps:
             - name: Python Lint Code Scanning Action
               uses: advanced-security/python-lint-code-scanning-action@v1.1.1
