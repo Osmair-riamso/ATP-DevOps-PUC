@@ -6,7 +6,7 @@ on:
             - main
 jobs:
     build:
-        run-on: ubuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Python Lint Code Scanning Action
             uses: advanced-security/python-lint-code-scanning-action@v1.1.1
