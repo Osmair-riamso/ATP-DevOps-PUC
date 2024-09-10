@@ -19,5 +19,18 @@ async def root():
 async def funcaoteste():
     return {"Teste": True, "num_alatorio": random.randint(a: 0, b: 20000)}
 
+@app.post("/estudantes/cadastro")
+async def create_estudante(estudante:Estudante):
+    return estudante
+
+
+@app.put("/estudantes/update/{id_estudante}")
+async def update_item(id_estudante: int):
+    return id_estudante > 0
+
+@app.delete("/estudantes/delete/{id_estudante}")
+async def delete_estudante(id_estudante:int):
+    return id_estudante > 0
+
 
 
