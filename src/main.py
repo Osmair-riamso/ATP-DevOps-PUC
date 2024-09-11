@@ -1,4 +1,4 @@
-from random import randint
+import random
 from pydantic import BaseModel
 from fastapi import FastAPI
 
@@ -17,7 +17,7 @@ async def root():
 #http://127.0.0.1:8000/teste1
 @app.get('/funcaoteste')
 async def funcaoteste():
-    return {"Teste": True, "num_alatorio": random.randint(a: 0, b: 20000)}
+    return {"funcaoteste": True,"num_alatorio": random.randint(0,20000)}
 
 @app.post("/estudantes/cadastro")
 async def create_estudante(estudante:Estudante):
