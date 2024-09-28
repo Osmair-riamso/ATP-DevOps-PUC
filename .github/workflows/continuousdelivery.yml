@@ -28,12 +28,15 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   name: projetozipado.zip
+
             - name: Display structure of downloaded files
               run: ls -R
 
             # Adicionando o passo para notificar no Discord via curl
             - name: Notify Discord
+              env:
+                DISCORD_WEBHOOK: ${{ secrets.DISCORDSERVER }}
               run: |
                 curl -H "Content-Type: application/json" \
-                -d '{"content": "Deploy completed successfully!"}' \
-                ${{ secrets.DISCORDSERVER }}
+                -d "{\"content\": \"Deploy completed successfully!\"}" \
+                $DISCORD_WEBHOOK
